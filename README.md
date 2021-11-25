@@ -1,6 +1,7 @@
 # RProgramAssignmentW4
 ##
 ## The "run_analysis.R" should load the raw data and clean up following instructions, and get a tidy dataset
+## The "codebook.md" contains the code for variables in the tidy dataset
 ##
 ### preparations1: load packages
 ### preparations2: load the data by read.csv(), includig training and test data sets, features for colnames, and activity_labels
@@ -14,6 +15,11 @@
 #### 3.2 creat a new column contains the descriptive activity names by mutate
 #### Note that here I use a for loop instead a mutate using a function. The problem in mutate is that it does not do vectorization but take the whole column as an input. Don't why either for now.
 ### 4. Appropriately labels the data set with descriptive variable names. done in step 1
-### 5. save the tidy dataset by write.table()
-## The "codebook.md" contains the code for variables in the tidy dataset
+### 5. From the data set in step 4, creates a second, independent tidy data set 
+### with the average of each variable for each activity and each subject.
+#### 5.1 group_by the df by activities
+#### 5.2 summarise the mean for the rest variables using summarise_at()
+#### 5.3 save the tidy dataset by write.table()
+##
+
 
