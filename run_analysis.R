@@ -27,7 +27,9 @@ df_train$category <- c("training")
 
 df <- rbind(df_train,df_test)
 
-# save the df as csv,so it can keep the suffix automated add for the duplicated names,otherwise return a error when converting to tbl, and won't take the .name_repair as an argument to fix the duplicated name issue
+# save the df as csv,so it can keep the suffix automated add for the duplicated names,
+# otherwise return a error when converting to tbl, and won't take the .name_repair as 
+# an argument to fix the duplicated name issue
 write.csv(df,"df.csv", row.names = F)
 df1 <- read.csv("df.csv")
 dt <- tbl_df(df1)
@@ -51,7 +53,12 @@ label <- function(x){
   return(lab)
 }  
 
-# the function is supposed to do vectorization, meaning do the same function for each single element, but here, instead, it takes the whole column dt$labels as input, and return warning that the input length > 1 so that it obly take the first element for the function, so actually, it is now all the number 5 STANDING..., if you know how to fix this problem, kindly let me know, thanks! 
+# the function is supposed to do vectorization, meaning do the same function for each 
+# single element, but here, instead, it takes the whole column dt$labels as input, 
+# and return warning that the input length > 1 so that it only take the first element 
+#for the function, so actually, it is now all the number 5 STANDING..., 
+# if you know how to fix this problem, kindly let me know, thanks! 
+
 dt2 <- dt %>%
   mutate(activities = label(labels))
 
@@ -63,7 +70,8 @@ for (i in 1:nrow(df1)){
 }
 
 
-#4. Appropriately labels the data set with descriptive variable names. 
+#4. Appropriately labels the data set with descriptive variable names. done at preparations.
+
 #5. From the data set in step 4, creates a second, independent tidy data set 
 #with the average of each variable for each activity and each subject.
 dt4 <- tbl_df(dt3)
