@@ -1,23 +1,17 @@
 # codebook for tidy_data
-
-## labels    1
-##        labels for activities
-##        1. WALKING
-##        2. WALKING_UPSTAIRS
-##        3. WALKING_DOWNSTAIRS
-##        4. SITTING
-##        5. STANDING
-##        6. LAYING
-
+##
 ## activities    activities description
-##        WALKING
-##        WALKING_UPSTAIRS
-##        WALKING_DOWNSTAIRS
-##        SITTING
-##        STANDING
-##        LAYING
-
-## code for the following parameter(details found in this [link](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones):
+## WALKING
+## WALKING_UPSTAIRS
+## WALKING_DOWNSTAIRS
+## SITTING
+## STANDING
+## LAYING
+##
+## code for the following parameter(details found in this [link](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)) and the value represcents average. For example, tBodyAcc.mean...X is the average (of several measurements) of mean X-axial signals (time) of accelerometer accounted for body
+##
+## t = time
+## f = Fast Fourier Transform
 ## mean = Mean value
 ## std = Standard deviation
 ## Body = signals account for body
@@ -26,7 +20,6 @@
 ## Jerk = Jerk signals
 ## Gyro = angular velocity
 ## Mag = magnitude of three-dimensional signals
-## f = Fast Fourier Transform
 ## X = X-axial
 ## Y = Y-axial
 ## Z = Z-axial
