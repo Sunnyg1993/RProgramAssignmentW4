@@ -1,7 +1,7 @@
 #You should create one R script called run_analysis.R that does the following. 
 library(dplyr)
 library(tidyr)
-
+setwd('./Chapter3_get_and_clean_data/Chapter3_assn2/')
 #load the files
 #load the features
 feats <- read.table("./UCI HAR Dataset/features.txt")
@@ -64,11 +64,18 @@ for (i in 1:nrow(df1)){
 
 
 #4. Appropriately labels the data set with descriptive variable names. 
-#5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#5. From the data set in step 4, creates a second, independent tidy data set 
+#with the average of each variable for each activity and each subject.
 dt4 <- tbl_df(dt3)
-tidy_data <- dt4%>%
-  select(contains(c("labels","activities","mean","std")))
-write.table(tidy_data, file = "tidy_data.txt",row.name=FALSE)
+
+dt5 <- dt4%>%
+  select(contains(c("activities","mean","std")))%>%
+  group_by(activities)%>%
+  #summarize the mean for each variable
+  summarise_at(vars(tBodyAcc.mean...X:fBodyBodyGyroJerkMag.std..),mean)
+
+
+write.table(dt5, file = "tidy_data.txt",row.name=FALSE)
 
 
 
